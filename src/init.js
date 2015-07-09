@@ -57,6 +57,24 @@ $(document).ready(function(){
     });
   });
 
+  $(".disperseButton").on("click", function(event) {
+    dancers.forEach(function(dancer) {
+      var top = $("body").height() * Math.random();
+      var left = $("body").width() * Math.random();
+      var timeBetweenSteps = Math.random() * 1000;
+
+      if (dancer instanceof NyanCatDancer) {
+        dancer.moving = true;
+      } else if (dancer instanceof CatDancer){
+        timeBetweenSteps = timeBetweenSteps*7 + 1000;
+      } else if (dancer instanceof BlinkyDancer){
+        timeBetweenSteps = timeBetweenSteps*2 + 500;
+      }
+      dancer.setPosition(top,left);
+      dancer.timeBetweenSteps = timeBetweenSteps;
+    });
+
+  });
 
 
 

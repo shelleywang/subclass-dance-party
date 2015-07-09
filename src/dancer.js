@@ -76,7 +76,10 @@ Dancer.prototype.lineUp = function(totalDancers,index) {
   var windowWidth = $('body').width();
   var width = windowWidth * index/totalDancers;
   var windowHeight = $('body').height();
-  var height = windowHeight*.8;
+  var level = Math.abs(totalDancers/2-(index+1));
+  var height = windowHeight*.25+(level*windowHeight*.5/totalDancers); 
+  
+
 
   this.$node.animate({
     top: height,
