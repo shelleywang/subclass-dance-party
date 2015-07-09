@@ -47,7 +47,6 @@ Dancer.prototype.flipBack = function(){
     textIndent: '+=360' // random assignment
   }, {duration: 1000,
     step: function(now, fx) {
-      console.log(now);
       $(this).css('transform', 'rotate(' + now + 'deg)')
     }
   });
@@ -62,4 +61,14 @@ Dancer.prototype.jump = function(){
   this.$node.animate({
     top: '-=50'
   }, 200);
+};
+
+Dancer.prototype.lineUp = function(totalDancers,index) {
+  var windowHeight = $('body').height();
+  var height = (windowHeight / totalDancers) * index;
+
+  this.$node.animate({
+    top: height,
+    left: 10
+  }, 100);
 };
