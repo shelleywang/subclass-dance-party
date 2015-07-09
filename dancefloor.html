@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <title>Object Dance Party</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="lib/jquery.js"></script>
+    <script src="src/dancer.js"></script>
+    <script src="src/blinkyDancer.js"></script>
+    <script src="src/catDancer.js"></script>
+    <script src="src/nyanCatDancer.js"></script>
+    <script src="src/grumpyCatDancer.js"></script>
+  </head>
+  <body>
+    <audio src="assets/nyansong.mp3" controls autoplay loop></audio>
+    <div class="topbar">
+      <span class="title">object dance party</span>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a firework</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="CatDancer">add a cat</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="NyanCatDancer">add a nyan cat</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="NyanCatDancer" data-dancer-direction="left">add a backwards nyan cat</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="GrumpyCatDancer">add a grumpy cat</a>
+      <a href="#" class="lineUpButton">line up</a>    </div>
+    <script src="src/init.js"></script>
+  </body>
+</html>
