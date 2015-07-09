@@ -10,6 +10,8 @@ var Dancer = function(top, left, timeBetweenSteps){
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
 
+  this.moving = true;
+
 };
 
 Dancer.prototype.step = function(){
@@ -29,15 +31,22 @@ Dancer.prototype.setPosition = function(top, left){
   this.$node.css(styleSettings);
 };
 
-Dancer.prototype.slideRight = function(){
+Dancer.prototype.slide = function(){
+  this.speed = this.speed || 50;
+  var speed = this.direction === 'right' ? '+=' : '-=';
+  speed += this.speed;
   var bodywidth = ($('body').width() -100);
-  if (this.$node.position()['left'] > bodywidth) {
+  if (this.direction === 'right' && this.$node.position()['left'] > bodywidth) {
     this.$node.css({
-      left: -100,
+      left: -150,
+    });
+  } else if (this.direction === 'left' && this.$node.position()['left'] < 0 ) {
+    this.$node.css({
+      left: bodywidth+100,
     });
   } else {
     this.$node.animate({
-      left: '+=50'
+      left: speed
     }, 100);
   }
 };
@@ -64,11 +73,13 @@ Dancer.prototype.jump = function(){
 };
 
 Dancer.prototype.lineUp = function(totalDancers,index) {
+  var windowWidth = $('body').width();
+  var width = windowWidth * index/totalDancers;
   var windowHeight = $('body').height();
-  var height = (windowHeight / totalDancers) * index;
+  var height = windowHeight*.8;
 
   this.$node.animate({
     top: height,
-    left: 10
+    left: width
   }, 100);
 };

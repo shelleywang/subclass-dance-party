@@ -10,6 +10,6 @@ CatDancer.prototype = Object.create(Dancer.prototype);
 CatDancer.prototype.constructor = CatDancer;
 
 CatDancer.prototype.step = function() {
-  setTimeout(this.step.bind(this), 100);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
   this.flipBack();
 }
