@@ -29,7 +29,9 @@ $(document).ready(function(){
     var timeBetweenSteps = Math.random() * 1000;
 
     if (dancerMakerFunctionName === "CatDancer"){
-      timeBetweenSteps *= 10;
+      timeBetweenSteps = timeBetweenSteps*7 + 1000;
+    } else if (dancerMakerFunctionName === "GrumpyCatDancer"){
+      timeBetweenSteps = timeBetweenSteps*2 + 500;
     }
 
     var dancer = new dancerMakerFunction(top, left, timeBetweenSteps, dancerDirection);
