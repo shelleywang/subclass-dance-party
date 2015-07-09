@@ -1,27 +1,58 @@
 body, html{
+  font-family: 'Lato', 'Open Sans';
   height:100%;
 }
 body{
+  background-image: url(assets/bg.jpg);
+  background-size: 1500px 1000px;
   margin: 0px;
   background-color:#444;
-  font-size: 18px;
+  font-size: 25px;
+  font-weight:200;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: white;
+  text-decoration: none;
 }
 .title, .addDancerButton{
-  padding:5px 12px;
+  padding:2px 12px;
   float:right;
 }
 .topbar{
-  height:32px;
+  height:35px;
   background-color: #555;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  background-image:url('assets/fireworks.png');
+  height:100px;
+  width:100px;
+  background-size: 100px 100px;
+  position:absolute;
+}
+
+.catDancer{
+  background-image: url('assets/cat.gif');
+  height:100px;
+  width: 100px;
+  background-size: 100px 100px;
+  position:absolute;
+}
+
+.nyanCatDancer{
+  background-image: url('assets/nyancat.gif');
+  height:150px;
+  width: 150px;
+  background-size: 150px 150px;
+  position:absolute;
+}
+
+.grumpyCatDancer{
+  background-image: url('assets/grumpycat.gif');
+  height:120px;
+  width: 120px;
+  background-size: 120px 120px;
   position:absolute;
 }
